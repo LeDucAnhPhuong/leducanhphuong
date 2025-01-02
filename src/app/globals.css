@@ -203,7 +203,7 @@ body {
   }
 
   .field-input {
-    @apply w-full dark:bg-black-300 bg-white-900 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg dark:text-white-800 text-black-600  shadow-lg focus:outline-none;
+    @apply w-full dark:bg-black-300 bg-white-900 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg dark:text-white-800 text-black-600  shadow-lg focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50; 
   }
 
   .field-btn {

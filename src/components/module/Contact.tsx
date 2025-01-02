@@ -5,7 +5,6 @@ import { FormEvent, useRef, useState } from "react";
 import useAlert from "@/hooks/useAlert";
 import Alert from "@/components/ui/Alert";
 
-import { env } from "process";
 import { MoveUpRight } from "lucide-react";
 import Terminal from "../ui/Terminal";
 const Contact = () => {
@@ -23,14 +22,13 @@ const Contact = () => {
   }) => {
     setForm({ ...form, [name]: value });
   };
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     emailjs
       .send(
-        env.VITE_APP_EMAILJS_SERVICE_ID ?? "",
-        env.VITE_APP_EMAILJS_TEMPLATE_ID ?? "",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
         {
           from_name: form.name,
           to_name: "Lê Đức Anh Phương",
@@ -38,7 +36,7 @@ const Contact = () => {
           to_email: "leducanhphuongdev@gmail.com",
           message: form.message,
         },
-        env.VITE_APP_EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(
         () => {
