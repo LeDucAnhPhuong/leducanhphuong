@@ -24,7 +24,7 @@
 ✨ Creating bugs since 2022<br>
 📚 I'm currently learning at FPT University<br>
 🎯 Goals: Become a Senior Frontend Developer<br>
-🎲 Fun fact:I'm chill guy, I enjoy solving puzzles and exploring new tech!
+🎲 Fun fact: I'm chill guy, I enjoy solving puzzles and exploring new tech!
 </p>
 
 ###
