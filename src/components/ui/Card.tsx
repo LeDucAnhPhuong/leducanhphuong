@@ -23,13 +23,13 @@ const Card: React.FC<CardProps> = ({ value, ...props }: CardProps) => {
             transform: "translate(0)",
             transition: "all 0.5s ease-out 0s",
             background:
-              "radial-gradient(circle, rgba(0,0,0) 3%, transparent 60%)",
+              "radial-gradient(circle, hsl(var(--card-shadow)) 3%, transparent 60%)",
             opacity: 0,
           }
         : {
             transform: `translate(${-rotate.x * 0.7}px, ${rotate.y * 0.7}px)`,
             background:
-              "radial-gradient(circle, rgba(0,0,0) 3%, transparent 60%)",
+              "radial-gradient(circle, hsl(var(--card-shadow)) 3%, transparent 60%)",
             transition: "all 0.1s ease-out 0s",
             opacity:
               (Math.abs(rotate.x) + Math.abs(rotate.y)) /

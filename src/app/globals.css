@@ -12,6 +12,7 @@ body {
 
 @layer base {
   :root {
+    --card-shadow: 0 0% 0%;
     --background: 0 0% 92.94%;
     --foreground: 222.2 84% 4.9%;
     --card: 240 3.85% 89.8%;
@@ -47,6 +48,7 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
+    --card-shadow: 0 0% 100%;
     --background: 0 0% 3.92%;
     --foreground: 210 40% 98%;
     --card: 240 6.67% 5.88%;
