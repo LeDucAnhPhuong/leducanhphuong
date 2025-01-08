@@ -150,7 +150,7 @@ export const myProjects = [
       {
         id: 3,
         name: "TypeScript",
-        path: "/assets/typescript.png",
+        path: "/assets/typescript.svg",
       },
       {
         id: 4,
@@ -192,7 +192,7 @@ export const myProjects = [
       {
         id: 3,
         name: "TypeScript",
-        path: "/assets/typescript.png",
+        path: "/assets/typescript.svg",
       },
       {
         id: 4,
@@ -229,7 +229,7 @@ export const myProjects = [
       {
         id: 3,
         name: "TypeScript",
-        path: "/assets/typescript.png",
+        path: "/assets/typescript.svg",
       },
       {
         id: 4,
@@ -271,7 +271,7 @@ export const myProjects = [
       {
         id: 3,
         name: "TypeScript",
-        path: "/assets/typescript.png",
+        path: "/assets/typescript.svg",
       },
       {
         id: 4,
