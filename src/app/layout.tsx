@@ -5,8 +5,10 @@ import Footer from "@/components/layouts/Footer";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Portfolio app",
-  description: "This is Phuong's portfolio",
+  title: {
+    template: "%s | Phuong's Portfolio",
+    default: "Phuong's Portfolio",
+  },
 };
 
 export default function RootLayout({

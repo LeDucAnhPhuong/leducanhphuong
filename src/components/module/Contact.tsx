@@ -1,17 +1,14 @@
 "use client";
 import emailjs from "@emailjs/browser";
-import { FormEvent, useRef, useState } from "react";
-
-import useAlert from "@/hooks/useAlert";
-import Alert from "@/components/ui/Alert";
+import { FormEvent, useRef, useState, useTransition } from "react";
 
 import { MoveUpRight } from "lucide-react";
 import Terminal from "../ui/Terminal";
+import { toast } from "sonner";
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null!);
 
-  const { alert, showAlert, hideAlert } = useAlert();
-  const [loading, setLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
@@ -23,54 +20,45 @@ const Contact = () => {
     setForm({ ...form, [name]: value });
   };
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    emailjs
-      .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
-        {
-          from_name: form.name,
-          to_name: "Lê Đức Anh Phương",
-          from_email: form.email,
-          to_email: "leducanhphuongdev@gmail.com",
-          message: form.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            text: "Thank you for your message 😃",
-            type: "success",
-          });
+    startTransition(async () => {
+      e.preventDefault();
+      const toastID = toast.loading("sending your message...");
+      await emailjs
+        .send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
+          {
+            from_name: form.name,
+            to_name: "Lê Đức Anh Phương",
+            from_email: form.email,
+            user_email: form.email,
+            to_email: "leducanhphuongdev@gmail.com",
+            message: form.message,
+          },
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            toast.success("Thank you for your message 😃", { id: toastID });
 
-          setTimeout(() => {
-            hideAlert();
-            setForm({
-              name: "",
-              email: "",
-              message: "",
-            });
-          }, 3000);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          showAlert({
-            text: "I didn't receive your message 😢",
-            type: "danger",
-          });
-        }
-      );
+            setTimeout(() => {
+              setForm({
+                name: "",
+                email: "",
+                message: "",
+              });
+            }, 3000);
+          },
+          (error) => {
+            console.error(error);
+            toast.error("I didn't receive your message 😢", { id: toastID });
+          }
+        );
+    });
   };
 
   return (
     <section className="c-space my-20" id="contact">
-      {alert.show && <Alert text={alert.text} type={alert.type} />}
-
       <div className="relative min-h-screen flex items-center justify-center flex-col">
         <Terminal>
           <div className="contact-container">
@@ -125,8 +113,8 @@ const Contact = () => {
                 />
               </label>
 
-              <button className="field-btn" type="submit" disabled={loading}>
-                {loading ? "Sending..." : "Send Message"}
+              <button className="field-btn text-black dark:text-white" type="submit" disabled={isPending}>
+                {isPending ? "Sending..." : "Send Message"}
                 <MoveUpRight className="w-5 h-5" />
               </button>
             </form>

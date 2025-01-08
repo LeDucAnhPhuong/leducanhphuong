@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
 
-const HeroCamera = ({ isMobile, children }) => {
+const HeroCamera = ({ isMobile, visible, children }) => {
   const group = useRef();
 
   useFrame((state, delta) => {
@@ -19,7 +19,11 @@ const HeroCamera = ({ isMobile, children }) => {
     }
   });
 
-  return <group ref={group}>{children}</group>;
+  return (
+    <group visible={visible} ref={group}>
+      {children}
+    </group>
+  );
 };
 
 export default HeroCamera;

@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, SpotLight } from "@react-three/drei";
 
@@ -7,12 +7,14 @@ import Developer from "@/components/ui/Developer";
 import CanvasLoader from "@/components/ui/Loading";
 import { workExperiences } from "@/helper/data";
 import Image from "next/image";
+import useIsInViewport from "@/hooks/useIsInViewport";
 
 const WorkExperience = () => {
   const [animationName, setAnimationName] = useState("idle");
-
+  const ref = useRef<HTMLElement | null>(null);
+  const isView = useIsInViewport(ref);
   return (
-    <section className="c-space my-20" id="work">
+    <section ref={ref} className="c-space my-20" id="work">
       <div className="w-full dark:text-white-600 text-black-600">
         <p className="head-text">My Work Experience</p>
 
@@ -31,9 +33,10 @@ const WorkExperience = () => {
 
               <Suspense fallback={<CanvasLoader />}>
                 <Developer
-                  position-y={-3}
-                  scale={3}
+                  position-y={-8}
+                  scale={5}
                   animationName={animationName}
+                  visible={isView}
                 />
               </Suspense>
             </Canvas>
@@ -70,11 +73,9 @@ const WorkExperience = () => {
                       {item.name}
                     </p>
                     <p className="text-sm mb-5">
-                      {item.pos} -- <span>{item.duration}</span>
+                      <span>{item.duration}</span>
                     </p>
-                    <p className="">
-                      {item.title}
-                    </p>
+                    <p className="">{item.title}</p>
                   </div>
                 </div>
               ))}

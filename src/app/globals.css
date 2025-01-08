@@ -14,7 +14,7 @@ body {
   :root {
     --background: 0 0% 92.94%;
     --foreground: 222.2 84% 4.9%;
-    --card: 230.53 30.16% 87.65%;
+    --card: 240 3.85% 89.8%;
     --card-foreground: 240 3.85% 89.8%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
@@ -113,7 +113,7 @@ body {
 
   /* button component */
   .btn {
-    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-card  transition-all active:scale-95 mx-auto;
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black dark:bg-white text-white dark:text-black  transition-all active:scale-95 mx-auto;
   }
 
   .btn-ping {
@@ -131,7 +131,7 @@ body {
 
   /* about section */
   .grid-container {
-    @apply w-full h-full border border-card-foreground shadow-xl bg-card rounded-lg sm:p-7 p-4 flex flex-col gap-5;
+    @apply w-full h-full border border-card-foreground shadow-2xl bg-card rounded-lg sm:p-7 p-4 flex flex-col gap-5;
   }
 
   .grid-headtext {
@@ -148,16 +148,16 @@ body {
 
   /* projects section  */
   .arrow-btn {
-    @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;
+    @apply w-10 h-10 p-2 cursor-pointer active:scale-95 transition-all flex justify-center items-center rounded-full;
   }
 
   .tech-logo {
-    @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
+    @apply w-10 h-10  rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
   }
 
   /* clients section */
   .client-container {
-    @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
+    @apply grid md:grid-cols-6 grid-cols-1 justify-center gap-5 mt-12;
   }
 
   .client-review {
@@ -170,15 +170,15 @@ body {
 
   /*  work experience section */
   .work-container {
-    @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12;
+    @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12 ;
   }
 
   .work-canvas {
-    @apply col-span-1 rounded-lg dark:bg-black-200 bg-card border dark:border-black-300;
+    @apply col-span-1 rounded-lg dark:bg-black-200 bg-card border dark:border-black-300 shadow-xl;
   }
 
   .work-content {
-    @apply col-span-2 rounded-lg  dark:bg-black-200 border dark:border-black-300 bg-card;
+    @apply col-span-2 rounded-lg  dark:bg-black-200 border dark:border-black-300 bg-card shadow-xl;
   }
 
   .work-content_container {
@@ -186,7 +186,7 @@ body {
   }
 
   .work-content_logo {
-    @apply rounded-3xl w-16 h-16 p-2 bg-black-600;
+    @apply rounded-full w-16 h-16 p-4 bg-black-600;
   }
 
   .work-content_bar {
@@ -203,11 +203,11 @@ body {
   }
 
   .field-input {
-    @apply w-full dark:bg-black-300 bg-white-900 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg dark:text-white-800 text-black-600  shadow-lg focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50; 
+    @apply w-full transition-none dark:bg-black-300 bg-background  px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg dark:text-white-800 text-black-600  shadow-lg focus:outline-none focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   .field-btn {
-    @apply dark:bg-black-500 bg-white-900 px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg gap-3;
+    @apply dark:bg-black-500 px-5 py-2 bg-background min-h-12 rounded-lg shadow-xl flex justify-center items-center text-lg gap-3;
   }
 
   .field-btn_arrow {
@@ -226,16 +226,6 @@ body {
   animation-iteration-count: infinite;
   transform-origin: 70% 70%;
   display: inline-block;
-}
-
-.arrow-gradient {
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.1) 10%,
-    rgba(255, 255, 255, 0.000025) 50%,
-    rgba(255, 255, 255, 0.000025) 50%,
-    rgba(255, 255, 255, 0.025) 100%
-  );
 }
 
 @keyframes wave-animation {

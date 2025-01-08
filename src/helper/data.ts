@@ -21,62 +21,94 @@ export const navLinks = [
   },
 ];
 
-export const clientReviews = [
+export const Skills = [
   {
     id: 1,
-    name: "Emily Johnson",
-    position: "Marketing Director at GreenLeaf",
-    img: "/assets/review1.png",
-    review: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.`,
+    name: "HTML",
+    img: "/assets/html.png",
   },
   {
     id: 2,
-    name: "Mark Rogers",
-    position: "Founder of TechGear Shop",
-    img: "/assets/review2.png",
-    review: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.`,
+    name: "CSS",
+    img: "/assets/css.png",
   },
   {
     id: 3,
-    name: "John Dohsas",
-    position: "Project Manager at UrbanTech ",
-    img: "/assets/review3.png",
-    review: `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.`,
+    name: "Javascript",
+    img: "/assets/javascript.svg",
+  },
+  {
+    id: 11,
+    name: "Typescript",
+    img: "/assets/typescript.svg",
   },
   {
     id: 4,
-    name: "Ether Smith",
-    position: "CEO of BrightStar Enterprises",
-    img: "/assets/review4.png",
-    review: `There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.`,
+    name: "React",
+    img: "/assets/react.svg",
+  },
+  {
+    id: 5,
+    name: "Tailwindcss",
+    img: "/assets/tailwindcss.svg",
+  },
+  {
+    id: 6,
+    name: "Nextjs",
+    img: "/assets/nextjs.png",
+  },
+  {
+    id: 7,
+    name: "Github",
+    img: "/assets/github.svg",
+  },
+  {
+    id: 8,
+    name: "Redux",
+    img: "/assets/redux.png",
+  },
+  {
+    id: 9,
+    name: "NextUI",
+    img: "/assets/nextui.svg",
+  },
+  {
+    id: 10,
+    name: "Antd",
+    img: "/assets/antd.png",
+  },
+  {
+    id: 12,
+    name: "Shadcn",
+    img: "/assets/shadcn.png",
   },
 ];
 
 export const myProjects = [
   {
-    title: "Podcastr - AI Podcast Platform",
-    desc: "Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.",
+    title: "FU - DEVER(Landing)",
+    desc: "FU-DEVER(Landing) is a website used to promote the club, the website includes functions such as displaying information about past projects, photo albums, user information and information about users' leedcode accounts displayed through the leedcode leaderboard.",
     subdesc:
-      "Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Podcastr is designed for optimal performance and scalability.",
-    href: "https://www.youtube.com/watch?v=zfAb95tJvZQ",
+      "Built with Next.js, Tailwind CSS, and TypeScript, it ensures high performance and scalability. Additionally, the platform is optimized for SEO, ensuring improved visibility on search engines and better user engagement through fast load times and accessible content.",
+    href: "https://github.com/sawsew467/fu-dever-landingpage-v2",
     texture: "/textures/project/project1.mp4",
-    logo: "/assets/project-logo1.png",
+    logo: "/assets/dever.png",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
-      boxShadow: "0px 0px 60px 0px #AA3C304D",
+      boxShadow: "0px 0px 60px 0px #0098FF",
     },
     spotlight: "/assets/spotlight1.png",
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
+        name: "Next.js",
+        path: "/assets/nextjs.png",
       },
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "/assets/tailwindcss.svg",
       },
       {
         id: 3,
@@ -91,12 +123,54 @@ export const myProjects = [
     ],
   },
   {
-    title: "LiveDoc - Real-Time Google Docs Clone",
-    desc: "LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.",
+    title: "FU - DEVER(Admin)",
+    desc: "FU-DEVER(Admin) is a website to manage user information, projects made with markdown and club image albums , as well as CRUD processing of user information.",
     subdesc:
-      "With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.",
-    href: "https://www.youtube.com/watch?v=y5vE8y_f_OM",
+      "Built with Next.js, Tailwind CSS, and TypeScript, redux query, Antd with strong UI and UX for admin to handle data for FU-DEVER(Lading) website.",
+    href: "https://github.com/FU-DEVER-ORG/dever-admin",
     texture: "/textures/project/project2.mp4",
+    logo: "/assets/dever.png",
+    logoStyle: {
+      backgroundColor: "#2A1816",
+      border: "0.2px solid #36201D",
+      boxShadow: "0px 0px 60px 0px #0098FF",
+    },
+    spotlight: "/assets/spotlight1.png",
+    tags: [
+      {
+        id: 1,
+        name: "Next.js",
+        path: "/assets/nextjs.png",
+      },
+      {
+        id: 2,
+        name: "TailwindCSS",
+        path: "/assets/tailwindcss.svg",
+      },
+      {
+        id: 3,
+        name: "TypeScript",
+        path: "/assets/typescript.png",
+      },
+      {
+        id: 4,
+        name: "Antd",
+        path: "/assets/antd.png",
+      },
+      {
+        id: 5,
+        name: "Redux query",
+        path: "/assets/redux.png",
+      },
+    ],
+  },
+  {
+    title: "StyledUp - Shop",
+    desc: "StyledUp is a modern e-commerce platform and admin system for managing shop operations, including user accounts, clothing inventory, and orders. It allows users to customize clothing, especially t-shirts, with designs, colors, text, images, and 3D visual try-on, creating unique, personalized items.",
+    subdesc:
+      "StyledUp is built with Next.js and NextUI, optimized for performance, scalability, and a seamless shopping experience. The platform features strong SEO for better visibility and includes an admin system for managing users, clothing inventory (including user-created items), orders, shipping, and payments.",
+    href: "https://github.com/hoangvh238/shop-fe",
+    texture: "/textures/project/project3.mp4",
     logo: "/assets/project-logo2.png",
     logoStyle: {
       backgroundColor: "#13202F",
@@ -107,13 +181,13 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
+        name: "Next.js",
+        path: "/assets/nextjs.png",
       },
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "/assets/tailwindcss.svg",
       },
       {
         id: 3,
@@ -122,25 +196,65 @@ export const myProjects = [
       },
       {
         id: 4,
+        name: "NextUI",
+        path: "/assets/nextui.svg",
+      },
+    ],
+  },
+  {
+    title: "FUSE",
+    desc: "FUSE is conceptually an application for connecting users around the world online, the project stopped after completing the FrontEnd, although the project still has a super beautiful UI combined with vivid 3D models.",
+    subdesc:
+      "built on Nextjs using radix-ui for UI, react-fiber for building 3d models and motion, gsap for creating animation for the model, the project is well appreciated in terms of UI as well as ideas.",
+    href: "https://github.com/sawsew467/fuse-frontend",
+    texture: "/textures/project/project4.mp4",
+    logo: "/assets/fuse.png",
+    logoStyle: {
+      backgroundColor: "#0E1F38",
+      border: "0.2px solid #0E2D58",
+      boxShadow: "0px 0px 60px 0px #2F67B64D",
+    },
+    spotlight: "/assets/spotlight6.png",
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: "/assets/react.svg",
+      },
+      {
+        id: 2,
+        name: "TailwindCSS",
+        path: "/assets/tailwindcss.svg",
+      },
+      {
+        id: 3,
+        name: "TypeScript",
+        path: "/assets/typescript.png",
+      },
+      {
+        id: 4,
+        name: "Radiux-ui",
+        path: "/assets/radix-ui.png",
+      },
+      {
+        id: 5,
         name: "Framer Motion",
         path: "/assets/framer.png",
       },
     ],
   },
   {
-    title: "CarePulse - Health Management System",
-    desc: "An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.",
+    title: "Green Environment",
+    desc: 'The website highlights FPT Education\'s 25th anniversary, focusing on innovation, sustainability, and educational achievements. It features initiatives like AI, electric vehicles, and digital transformation, alongside community-driven projects such as the "Lên Ngàn" challenge and environmental',
     subdesc:
-      "With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.",
-    href: "https://www.youtube.com/watch?v=lEflo_sc82g",
-    texture: "/textures/project/project3.mp4",
-    logo: "/assets/project-logo3.png",
+      "built with nextjs, tailwindcss and owns vivid 3d models with react fiber plus animations from gsap motion to make the website more friendly and attractive. In addition, it also owns very new features about Ai and image processing via camera.",
+    href: "https://github.com/sawsew467/innocode-final",
+    texture: "/textures/project/project5.mp4",
+    logo: "/assets/fpt.png",
     logoStyle: {
-      backgroundColor: "#60f5a1",
-      background:
-        "linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)",
-      border: "0.2px solid rgba(208, 213, 221, 1)",
-      boxShadow: "0px 0px 60px 0px rgba(35, 131, 96, 0.3)",
+      backgroundColor: "#1C1A43",
+      border: "0.2px solid #252262",
+      boxShadow: "0px 0px 60px 0px #635BFF4D",
     },
     spotlight: "/assets/spotlight3.png",
     tags: [
@@ -152,81 +266,7 @@ export const myProjects = [
       {
         id: 2,
         name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
-      },
-    ],
-  },
-  {
-    title: "Horizon - Online Banking Platform",
-    desc: "Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.",
-    subdesc:
-      "Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.",
-    href: "https://www.youtube.com/watch?v=PuOVqP_cjkE",
-    texture: "/textures/project/project4.mp4",
-    logo: "/assets/project-logo4.png",
-    logoStyle: {
-      backgroundColor: "#0E1F38",
-      border: "0.2px solid #0E2D58",
-      boxShadow: "0px 0px 60px 0px #2F67B64D",
-    },
-    spotlight: "/assets/spotlight4.png",
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
-      },
-      {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
-      },
-    ],
-  },
-  {
-    title: "Imaginify - AI Photo Manipulation App",
-    desc: "Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.",
-    subdesc:
-      "Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.",
-    href: "https://www.youtube.com/watch?v=Ahwoks_dawU",
-    texture: "/textures/project/project5.mp4",
-    logo: "/assets/project-logo5.png",
-    logoStyle: {
-      backgroundColor: "#1C1A43",
-      border: "0.2px solid #252262",
-      boxShadow: "0px 0px 60px 0px #635BFF4D",
-    },
-    spotlight: "/assets/spotlight5.png",
-    tags: [
-      {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
-      },
-      {
-        id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        path: "/assets/tailwindcss.svg",
       },
       {
         id: 3,
@@ -248,33 +288,33 @@ export const calculateSizes = (
   isTablet: boolean
 ) => {
   return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
-    deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
+    deskScale: isSmall ? 0.045 : isMobile ? 0.05 : 0.065,
+    deskPosition: isMobile ? [0.5, -4.5, -1] : [0.25, -5.5, -1],
     cubePosition: isSmall
-      ? [4, -5, 0]
+      ? [4, -4, 0]
       : isMobile
-        ? [5, -5, 0]
+        ? [4, -4, 2]
         : isTablet
-          ? [5, -5, 0]
-          : [9, -5.5, 0],
+          ? [5, -4, 2]
+          : [9, -4.5, 2],
     reactLogoPosition: isSmall
-      ? [3, 4, 0]
+      ? [3, 0, 0]
       : isMobile
-        ? [5, 4, 0]
+        ? [4, 4, 0]
         : isTablet
           ? [8, 4, 0]
           : [12, 3, 0],
     ringPosition: isSmall
-      ? [-5, 3, 0]
+      ? [-3, 3, 1]
       : isMobile
-        ? [-5, 5, 0]
+        ? [-4, 5, 1]
         : isTablet
-          ? [-5, 5, 0]
-          : [-10, 4, 0],
+          ? [-5, 5, 2]
+          : [-10, 4, 2],
     targetPosition: isSmall
-      ? [-5, -10, -10]
+      ? [-5, -9, -10]
       : isMobile
-        ? [-9, -10, -10]
+        ? [-8, -9, -10]
         : isTablet
           ? [-11, -7, -10]
           : [-13, -13, -10],
@@ -295,32 +335,29 @@ export const socialLink = [
 export const workExperiences = [
   {
     id: 1,
-    name: "Framer",
-    pos: "Lead Web Developer",
-    duration: "2022 - Present",
+    name: "Learn Basic HTML, CSS, Javascript",
+    duration: "2022 - first half of 2023",
     title:
-      "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: "/assets/framer.svg",
+      "This was the time I began learning frontend development. I studied the basics of HTML, CSS, and JavaScript. I practiced building simple web pages and adding interactive features. It helped me understand how websites work.",
+    icon: "/assets/javascript.svg",
     animation: "victory",
   },
   {
     id: 2,
-    name: "Figma",
-    pos: "Web Developer",
-    duration: "2020 - 2022",
+    name: "Learn React, Nextjs",
+    duration: "2023 - first half of 2024",
     title:
-      "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: "/assets/figma.svg",
+      "This was the time when I started exploring frameworks and libraries like React, Next.js, and related tools. It was an important step in my frontend learning journey. I gained a deeper understanding of how modern web development works.",
+    icon: "/assets/react.svg",
     animation: "clapping",
   },
   {
     id: 3,
-    name: "Notion",
-    pos: "Junior Web Developer",
-    duration: "2019 - 2020",
+    name: "FreeLancer",
+    duration: "2023 - present",
     title:
-      "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: "/assets/notion.svg",
-    animation: "salute",
+      "During this time, I felt confident enough to create products and started working on projects for clients. I continued learning and improving my skills alongside these experiences, which helped me gain practical knowledge and grow professionally.",
+    icon: "/assets/free-lancer.svg",
+    animation: "dancing",
   },
 ];

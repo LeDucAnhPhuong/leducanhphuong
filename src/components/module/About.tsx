@@ -11,13 +11,14 @@ import grid4 from "@img/assets/grid4.png";
 import { useTheme } from "next-themes";
 import { Check, Copy } from "lucide-react";
 import dynamic from "next/dynamic";
+import { toast } from "sonner";
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
   const { resolvedTheme: theme } = useTheme();
   const handleCopy = () => {
     navigator?.clipboard?.writeText("leducanhphuong@gmail.com");
     setHasCopied(true);
-
+    toast.success("Copy successful! 🎉");
     setTimeout(() => {
       setHasCopied(false);
     }, 2000);
@@ -32,15 +33,15 @@ const About = () => {
             <Image
               src={grid1}
               alt="grid-1"
-              className="w-full sm:h-[276px] h-fit object-contain"
-              width={100}
-              height={100}
+              className={`w-full ${theme === "dark" && "grayscale-[100%]"} transition-all duration-700 sm:h-[276px] h-fit object-contain`}
+              width={400}
+              height={400}
             />
 
             <div>
               <p className="grid-headtext">Hi, I’m Le Duc Anh Phuong</p>
               <p className="grid-subtext">
-                With 2 years of experience, I have honed my skills in frontend
+                With 1 years of experience, I have honed my skills in frontend
                 dev, creating dynamic and responsive websites.
               </p>
             </div>
@@ -52,6 +53,8 @@ const About = () => {
             <Image
               src={grid2}
               alt="grid-2"
+              width={400}
+              height={400}
               className="w-full sm:h-[276px] h-fit object-contain"
             />
 
@@ -97,7 +100,11 @@ const About = () => {
                 I&apos;m based in Rjieka, Croatia and open to remote work
                 worldwide.
               </p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              <Button
+                name="Contact Me"
+                isBeam
+                containerClass="w-full mt-10 bg-black dark:bg-white text-white dark:text-black"
+              />
             </div>
           </div>
         </div>
@@ -107,6 +114,8 @@ const About = () => {
             <Image
               src={grid3}
               alt="grid 3"
+              width={400}
+              height={400}
               className="w-full sm:h-[266px] h-fit object-contain"
             />
 
@@ -126,6 +135,8 @@ const About = () => {
             <Image
               src={grid4}
               alt="grid-4"
+              width={400}
+              height={400}
               className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
             />
 
