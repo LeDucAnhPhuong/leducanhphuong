@@ -6,7 +6,7 @@ import WorkExperience from "@/components/module/Experience";
 import Contact from "@/components/module/Contact";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Home page",
+  title: "About Me",
   description: "This is Le Duc Anh Phuong's home page portfolio",
 };
 export default function Home() {

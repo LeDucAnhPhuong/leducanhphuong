@@ -4,11 +4,12 @@ import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import { Providers } from "./providers";
 import { Analytics } from "@vercel/analytics/react";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: {
     template: "%s | Phuong's Portfolio",
-    default: "Phuong's Portfolio",
+    default: "About Me | Phuong's Portfolio",
   },
 };
 
@@ -19,6 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
+      <Head>
+        <link rel="shortcut icon" href="/static/icon.png" />
+      </Head>
       <body className={`bg-background antialiased`}>
         <Providers>
           <Header />
