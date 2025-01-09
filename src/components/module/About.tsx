@@ -16,6 +16,7 @@ import { Check, Copy } from "lucide-react";
 import dynamic from "next/dynamic";
 import { toast } from "sonner";
 import Card from "../ui/Card";
+import { cn } from "@/utils/cn";
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
   const { resolvedTheme: theme } = useTheme();
@@ -29,7 +30,10 @@ const About = () => {
   };
 
   return (
-    <section className="c-space mt-20 pb-20 space-y-10 overflow-hidden" id="about">
+    <section
+      className="c-space mt-20 pb-20 space-y-10 overflow-hidden"
+      id="about"
+    >
       <p className="head-text">About me</p>
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
@@ -38,7 +42,9 @@ const About = () => {
               <Image
                 src={grid1}
                 alt="grid-1"
-                className={`w-full ${theme === "dark" ? "grayscale-[100%]" : ""} transition-all duration-700 sm:h-[276px] h-fit object-contain`}
+                className={cn(
+                  `w-full transition-all dark:grayscale-[100%] duration-700 sm:h-[276px] h-fit object-contain`
+                )}
                 width={400}
                 height={400}
               />

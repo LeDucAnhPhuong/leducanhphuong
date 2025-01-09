@@ -9,21 +9,6 @@ const Developer = ({ animationName = "idle", visible, ...props }) => {
   const { scene, animations } = useGLTF("/models/animations/developer.glb");
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
-  const { animations: idleAnimation } = useFBX("/models/animations/idle.fbx");
-  const { animations: dancingAnimation } = useFBX(
-    "/models/animations/salute.fbx"
-  );
-  const { animations: clappingAnimation } = useFBX(
-    "/models/animations/clapping.fbx"
-  );
-  const { animations: victoryAnimation } = useFBX(
-    "/models/animations/victory.fbx"
-  );
-
-  idleAnimation[0].name = "idle";
-  dancingAnimation[0].name = "dancing";
-  clappingAnimation[0].name = "clapping";
-  victoryAnimation[0].name = "victory";
   const { actions } = useAnimations(animations, group);
   const previousAction = usePrevious(animationName);
 
@@ -34,6 +19,8 @@ const Developer = ({ animationName = "idle", visible, ...props }) => {
     }
     actions[animationName].play();
     actions[animationName].fadeIn(0.5);
+
+    return;
   }, [actions, animationName, previousAction]);
 
   return (
@@ -109,14 +96,10 @@ const Developer = ({ animationName = "idle", visible, ...props }) => {
 useGLTF.preload("/models/animations/developer.glb");
 
 function usePrevious(value) {
-  // The ref object is a generic container whose current property is mutable ...
-  // ... and can hold any value, similar to an instance property on a class
   const ref = useRef();
-  // Store current value in ref
   useEffect(() => {
     ref.current = value;
-  }, [value]); // Only re-run if value changes
-  // Return previous value (happens before update in useEffect above)
+  }, [value]);
   return ref.current;
 }
 
