@@ -6,7 +6,7 @@ import { SkeletonUtils } from "three-stdlib";
 const Developer = ({ animationName = "idle", visible, ...props }) => {
   const group = useRef();
 
-  const { scene } = useGLTF("/models/animations/character.glb");
+  const { scene, animations } = useGLTF("/models/animations/developer.glb");
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
   const { animations: idleAnimation } = useFBX("/models/animations/idle.fbx");
@@ -24,20 +24,9 @@ const Developer = ({ animationName = "idle", visible, ...props }) => {
   dancingAnimation[0].name = "dancing";
   clappingAnimation[0].name = "clapping";
   victoryAnimation[0].name = "victory";
-  // console.log("dancingAnimation", dancingAnimation);
-  // console.log("idleAnimation", idleAnimation);
-  const { actions, names, mixer } = useAnimations(
-    [
-      idleAnimation[0],
-      dancingAnimation[0],
-      clappingAnimation[0],
-      victoryAnimation[0],
-    ],
-    group
-  );
+  const { actions } = useAnimations(animations, group);
   const previousAction = usePrevious(animationName);
 
-  console.log("name", actions[animationName]);
   useEffect(() => {
     if (previousAction) {
       actions[previousAction].fadeOut(0.5);

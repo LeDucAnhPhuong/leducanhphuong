@@ -33,8 +33,8 @@ const WorkExperience = () => {
 
               <Suspense fallback={<CanvasLoader />}>
                 <Developer
-                  position-y={-8}
-                  scale={5}
+                  position-y={-7}
+                  scale={4.5}
                   animationName={animationName}
                   visible={isView}
                 />
