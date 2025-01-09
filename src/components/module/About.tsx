@@ -33,7 +33,7 @@ const About = () => {
             <Image
               src={grid1}
               alt="grid-1"
-              className={`w-full ${theme === "dark" && "grayscale-[100%]"} transition-all duration-700 sm:h-[276px] h-fit object-contain`}
+              className={`w-full ${theme === "dark" ? "grayscale-[100%]" : ""} transition-all duration-700 sm:h-[276px] h-fit object-contain`}
               width={400}
               height={400}
             />
