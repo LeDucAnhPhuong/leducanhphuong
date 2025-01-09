@@ -5,7 +5,7 @@ import Card from "../ui/Card";
 
 const Clients = () => {
   return (
-    <section className="c-space my-20">
+    <section className="c-space mt-20 pb-20 overflow-hidden ">
       <h3 className="head-text">My Skills</h3>
 
       <div className="client-container">
@@ -17,6 +17,7 @@ const Clients = () => {
                 alt={item?.name}
                 width={100}
                 height={100}
+                className="md:size-24 size-14"
               />
               <p className="text-xl">{item?.name}</p>
             </div>

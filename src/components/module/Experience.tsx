@@ -14,7 +14,7 @@ const WorkExperience = () => {
   const ref = useRef<HTMLElement | null>(null);
   const isView = useIsInViewport(ref);
   return (
-    <section ref={ref} className="c-space my-20" id="work">
+    <section ref={ref} className="c-space mb-20" id="work">
       <div className="w-full dark:text-white-600 text-black-600">
         <p className="head-text">My Work Experience</p>
 

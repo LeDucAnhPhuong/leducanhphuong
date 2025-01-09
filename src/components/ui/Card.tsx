@@ -82,7 +82,7 @@ const Card: React.FC<CardProps> = ({ value, ...props }: CardProps) => {
         <div className="inset-0 absolute flex flex-col justify-between  pointer-events-none">
           <span
             style={styleShadow}
-            className="z-[-1] inset-2 absolute blur-[10px] pointer-events-none"
+            className="z-[-1] lg:inset-2 inset-5 absolute blur-[10px] pointer-events-none"
           ></span>
         </div>
         <div className="text-[24px] backdrop-blur-xl font-semibold h-full p-5">
