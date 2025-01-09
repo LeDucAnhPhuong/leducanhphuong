@@ -17,7 +17,9 @@ import dynamic from "next/dynamic";
 import { toast } from "sonner";
 import Card from "../ui/Card";
 import { cn } from "@/utils/cn";
+import { useRouter } from "next/navigation";
 const About = () => {
+  const router = useRouter();
   const [hasCopied, setHasCopied] = useState(false);
   const { resolvedTheme: theme } = useTheme();
   const handleCopy = () => {
@@ -112,12 +114,15 @@ const About = () => {
                   I’m very flexible with time zone communications & locations
                 </p>
                 <p className="grid-subtext">
-                  I&apos;m based in Rjieka, Croatia and open to remote work
+                  I&apos;m based in Da Nang, Viet Nam and open to remote work
                   worldwide.
                 </p>
                 <Button
                   name="Contact Me"
                   isBeam
+                  onClick={() => {
+                    router.push("#contact");
+                  }}
                   containerClass="w-full mt-10 bg-black dark:bg-white text-white dark:text-black"
                 />
               </div>
