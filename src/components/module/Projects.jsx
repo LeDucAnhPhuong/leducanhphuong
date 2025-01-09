@@ -45,7 +45,7 @@ const Projects = () => {
 
 
   return (
-    <section ref={ref} className="c-space my-20">
+    <section ref={ref} className="c-space mb-20">
       <p className="head-text">My Project</p>
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
