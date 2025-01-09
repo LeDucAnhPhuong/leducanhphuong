@@ -133,7 +133,7 @@ body {
 
   /* about section */
   .grid-container {
-    @apply w-full h-full border border-card-foreground shadow-2xl bg-card rounded-lg sm:p-7 p-4 flex flex-col gap-5;
+    @apply w-full h-full border border-card-foreground shadow-2xl bg-card/30 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
   }
 
   .grid-headtext {

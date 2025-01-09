@@ -11,7 +11,7 @@ const Clients = () => {
       <div className="client-container">
         {Skills.map((item) => (
           <Card key={item?.id}>
-            <div className="flex flex-col h-full  space-y-4 justify-between items-center ">
+            <div className="flex p-5 flex-col h-full space-y-4 justify-between items-center ">
               <Image
                 src={item?.img}
                 alt={item?.name}

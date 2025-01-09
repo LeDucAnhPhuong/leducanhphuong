@@ -1,12 +1,17 @@
 "use client";
+import { cn } from "@/utils/cn";
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 interface CardProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "value"> {
-  value?: string;
+  extends Omit<React.ButtonHTMLAttributes<HTMLDivElement>, "value"> {
+  scale?: number;
 }
-const Card: React.FC<CardProps> = ({ value, ...props }: CardProps) => {
-  const cardRef = useRef<HTMLButtonElement>(null);
+const Card: React.FC<CardProps> = ({
+  className,
+  scale = 1.1,
+  ...props
+}: CardProps) => {
+  const cardRef = useRef<HTMLDivElement>(null);
   const [rotate, setRotate] = useState({
     x: 0,
     y: 0,
@@ -48,11 +53,11 @@ const Card: React.FC<CardProps> = ({ value, ...props }: CardProps) => {
             }, 0, ${
               (Math.abs(rotate.x) + Math.abs(rotate.y)) *
               (20 / (halfWidthCard + halfHeightCard))
-            }deg) scale(1.1)`,
+            }deg) scale(${scale})`,
             transition: "transform 0.1s ease-out 0s",
           }
     );
-  }, [rotate]);
+  }, [rotate, scale]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const topHeight = cardRef?.current?.getBoundingClientRect().top ?? 0;
@@ -69,10 +74,9 @@ const Card: React.FC<CardProps> = ({ value, ...props }: CardProps) => {
     setRotate({ x: 0, y: 0 });
   };
   return (
-    <button
+    <div
       ref={cardRef}
       {...props}
-      value={value}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className="relative w-full h-full rounded-xl bg-card border shadow-md border-card-foreground "
@@ -85,11 +89,16 @@ const Card: React.FC<CardProps> = ({ value, ...props }: CardProps) => {
             className="z-[-1] lg:inset-2 inset-5 absolute blur-[10px] pointer-events-none"
           ></span>
         </div>
-        <div className="text-[24px] backdrop-blur-xl font-semibold h-full p-5">
+        <div
+          className={cn(
+            "text-[24px] backdrop-blur-xl font-semibold h-full",
+            className
+          )}
+        >
           {props.children}
         </div>
       </div>
-    </button>
+    </div>
   );
 };
 
