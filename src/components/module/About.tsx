@@ -45,7 +45,7 @@ const About = () => {
                 src={grid1}
                 alt="grid-1"
                 className={cn(
-                  `w-full transition-all dark:grayscale-[100%] duration-700 sm:h-[276px] h-fit object-contain`
+                  `w-full sm:h-[276px] h-fit object-contain`
                 )}
                 width={400}
                 height={400}
