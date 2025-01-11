@@ -8,6 +8,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Me",
   description: "This is Le Duc Anh Phuong's home page portfolio",
+  openGraph: {
+    images: ["/assets/background.png"],
+    title: "About Me | Phuong's Portfolio",
+    description: "This is Le Duc Anh Phuong's home page portfolio",
+  },
 };
 export default function Home() {
   return (
